@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Pals - Fun Quizzes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+    <style>
+        .quiz-question {
+            background-color: #fce4ec; /* Light Pink */
+            border: 3px solid var(--color-primary);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .quiz-question p {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .quiz-question label {
+            display: block;
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .quiz-question label:hover {
+            background-color: var(--color-accent);
+        }
+        .score-box {
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-family: var(--font-family-header);
+            margin-top: 30px;
+            display: none; /* Hidden until quiz is submitted */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html">Lessons</a>
+                <a href="quizzes.html" class="active">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>🧠 Quiz Time! Test Your Skills</h1>
+        <p style="margin-bottom: 30px;">
+            Let's see how much you remember! Answer all 20 questions and click **Get Score** at the bottom.
+        </p>
+
+        <form id="quiz-form">
+            </form>
+
+        <button onclick="gradeQuiz()" class="button" style="margin-top: 20px;">✅ Get Score!</button>
+
+        <div id="score-results" class="score-box">
+            </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+    <script>
+        // Quiz Data - 20 Questions
+        const quizData = [
+            {
+                question: "1. What function is used to show a message on the screen?",
+                choices: ["show()", "speak()", "print()", "display()"],
+                answer: "print()"
+            },
+            {
+                question: "2. Which symbol is used for multiplication in Python?",
+                choices: ["x", "*", "#", "M"],
+                answer: "*"
+            },
+            {
+                question: "3. How do you assign the number 5 to a variable named 'x'?",
+                choices: ["x equals 5", "x = 5", "x: 5", "let x = 5"],
+                answer: "x = 5"
+            },
+            {
+                question: "4. What data type is 'Hello World'?",
+                choices: ["integer", "boolean", "float", "string"],
+                answer: "string"
+            },
+            {
+                question: "5. What keyword starts an 'if' decision block?",
+                choices: ["check", "if", "start", "decision"],
+                answer: "if"
+            },
+            {
+                question: "6. Which operator means 'is exactly equal to'?",
+                choices: ["=", "==", ">", "!="],
+                answer: "=="
+            },
+            {
+                question: "7. What are lists surrounded by?",
+                choices: ["{}", "()", "||", "[]"],
+                answer: "[]"
+            },
+            {
+                question: "8. What is the index (position number) of the first item in a list?",
+                choices: ["1", "0", "A", "Start"],
+                answer: "0"
+            },
+            {
+                question: "9. Which loop repeats a set number of times, often for items in a list?",
+                choices: ["while loop", "do loop", "for loop", "repeat loop"],
+                answer: "for loop"
+            },
+            {
+                question: "10. What keyword is used to define your own function?",
+                choices: ["function", "define", "def", "create"],
+                answer: "def"
+            },
+            {
+                question: "11. If an 'if' condition is False, where does the program go next?",
+                choices: ["continue", "stop", "elif or else", "to the start"],
+                answer: "elif or else"
+            },
+            {
+                question: "12. What does the `input()` function do?",
+                choices: ["Displays a number", "Runs a loop", "Gets text from the user", "Prints a greeting"],
+                answer: "Gets text from the user"
+            },
+            {
+                question: "13. What happens if you use the `break` keyword inside a loop?",
+                choices: ["The program crashes", "The loop stops immediately", "It skips one turn", "It prints a message"],
+                answer: "The loop stops immediately"
+            },
+            {
+                question: "14. A set of information stored with a 'key' and a 'value' is a:",
+                choices: ["List", "Dictionary", "Tuple", "String"],
+                answer: "Dictionary"
+            },
+            {
+                question: "15. How do you import a module called 'random'?",
+                choices: ["use random", "get random", "import random", "random module"],
+                answer: "import random"
+            },
+            {
+                question: "16. What is the result of `5 % 2` (the modulo operator)?",
+                choices: ["2.5", "3", "2", "1"],
+                answer: "1"
+            },
+            {
+                question: "17. Which is a correct way to start a line comment in Python?",
+                choices: ["// This", "/* This */", "# This", "$ This"],
+                answer: "# This"
+            },
+            {
+                question: "18. What is `True and False`?",
+                choices: ["True", "False", "Maybe", "Error"],
+                answer: "False"
+            },
+            {
+                question: "19. What is the purpose of the `return` keyword in a function?",
+                choices: ["To print a value", "To exit the program", "To send a value back to where the function was called", "To start a new loop"],
+                answer: "To send a value back to where the function was called"
+            },
+            {
+                question: "20. What is a piece of code you can use again and again called?",
+                choices: ["Loop", "Variable", "Function", "Module"],
+                answer: "Function"
+            }
+        ];
+
+        // JavaScript to generate and grade the quiz
+        function loadQuiz() {
+            const form = document.getElementById('quiz-form');
+            form.innerHTML = ''; // Clear existing content
+
+            quizData.forEach((q, index) => {
+                const qNum = index + 1;
+                const questionHTML = `
+                    <div class="quiz-question" id="q${qNum}">
+                        <p>${q.question}</p>
+                        ${q.choices.map(choice => `
+                            <label>
+                                <input type="radio" name="question${qNum}" value="${choice}">
+                                ${choice}
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+                form.innerHTML += questionHTML;
+            });
+        }
+
+        function gradeQuiz() {
+            let score = 0;
+            const form = document.getElementById('quiz-form');
+            const results = document.getElementById('score-results');
+
+            quizData.forEach((q, index) => {
+                const qNum = index + 1;
+                // Get the checked radio button's value for this question
+                const selector = `input[name="question${qNum}"]:checked`;
+                const userAnswerElement = form.querySelector(selector);
+                
+                // Reset styling
+                const questionDiv = document.getElementById(`q${qNum}`);
+                questionDiv.style.borderColor = 'var(--color-primary)';
+
+                if (userAnswerElement) {
+                    const userAnswer = userAnswerElement.value;
+                    if (userAnswer === q.answer) {
+                        score++;
+                        questionDiv.style.borderColor = '#4ECDC4'; // Teal for correct
+                    } else {
+                        questionDiv.style.borderColor = '#FF6B6B'; // Red for incorrect
+                    }
+                } else {
+                    // Mark as unanswered (incorrect)
+                    questionDiv.style.borderColor = '#FF6B6B';
+                }
+            });
+
+            // Display results
+            const totalQuestions = quizData.length;
+            const percentage = (score / totalQuestions) * 100;
+            let message = '';
+
+            if (score === totalQuestions) {
+                message = "WOW! You're a Python Master! 👑";
+            } else if (score >= totalQuestions * 0.75) {
+                message = "Awesome Job! You got most of them right! ⭐";
+            } else if (score >= totalQuestions * 0.5) {
+                message = "Good start! Keep practicing to get even better! 👍";
+            } else {
+                message = "That's okay! Review your lessons and try again! 💡";
+            }
+
+            results.innerHTML = `
+                <h2>${message}</h2>
+                <p>You scored **${score} out of ${totalQuestions}** (${percentage.toFixed(0)}%)!</p>
+                <p style="font-size: 1em;">Check the questions above: **Teal** border means **Correct**, **Red** means **Incorrect**.</p>
+            `;
+            results.style.display = 'block';
+            results.scrollIntoView({ behavior: 'smooth' }); // Scroll to score
+        }
+
+        // Load the quiz when the page loads
+        document.addEventListener('DOMContentLoaded', loadQuiz);
+
+    </script>
+</body>
+</html>

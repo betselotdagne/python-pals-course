@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Pals - All Lessons</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+    <style>
+        .lesson-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .lesson-item {
+            background-color: var(--color-background);
+            border: 3px solid var(--color-secondary);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .lesson-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .lesson-item h3 {
+            margin-top: 0;
+            color: var(--color-primary);
+            font-size: 1.4em;
+        }
+        .lesson-item p {
+            font-size: 0.9em;
+            color: var(--color-text);
+        }
+        .lesson-item a {
+            text-decoration: none;
+            color: inherit; /* Keep text color from parent */
+            display: block; /* Make the whole card clickable */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>📚 The Python Adventure Path (30 Steps)</h1>
+        <p style="font-size: 1.1em; margin-bottom: 30px;">
+            Follow these simple lessons to become a Python master! Click on any lesson to start.
+        </p>
+
+        <ul class="lesson-list">
+            <li class="lesson-item"><a href="lesson.html"><h3>1. Hello, Python Pal! 👋</h3><p>The first command to make the computer say anything.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>2. Numbers and Math 🧮</h3><p>How Python can be a super-fast calculator.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>3. Secret Words (Strings) 💬</h3><p>Storing words and sentences in a special text format.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>4. Storing Treasures (Variables) 📦</h3><p>Giving names to data so you can use them later.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>5. Getting Your Name 🙋</h3><p>Asking the user for input so your program can talk to them.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>6. What Kind of Data? 🤔</h3><p>Learning the types of data Python uses: text, numbers, true/false.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>7. Making Choices (If/Else) 🚦</h3><p>The computer deciding what to do based on a rule.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>8. More Choices (Elif) 🪜</h3><p>Adding more options when the first choice wasn't right.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>9. Comparing Things ⚖️</h3><p>Asking Python if one thing is bigger, smaller, or the same as another.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>10. Both Must Be True (And) ✅</h3><p>Checking if two rules are both true at the same time.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>11. One or the Other (Or) 🧩</h3><p>Checking if at least one of two rules is true.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>12. Lists: Toy Boxes 🎁</h3><p>Storing many items in a single, ordered list.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>13. Finding Items in Lists 🔍</h3><p>Finding a specific item using its number (index).</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>14. Changing Your List 🛠️</h3><p>Adding, removing, or changing items in your list.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>15. Counting Over and Over (For Loops) 🔁</h3><p>Doing the same thing a set number of times.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>16. The Range Helper 🔢</h3><p>A quick way to make Python count from one number to another.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>17. Keep Going Until (While Loops) 🕰️</h3><p>Repeating a task until a specific condition becomes false.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>18. Looping: Stop Early! 🛑</h3><p>Telling a loop to stop or skip one turn.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>19. Your Own Mini-Programs (Functions) 🧱</h3><p>Grouping code into a block you can use many times.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>20. Giving and Getting Back 📬</h3><p>Sending information into a function and getting a result back.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>21. Super-Lists (Nested Lists) 🌳</h3><p>Putting a list inside another list.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>22. Dictionaries: Address Book 📒</h3><p>Storing information with a unique name (key) instead of a number.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>23. Adding to Dictionaries ➕</h3><p>How to add new "addresses" to your address book.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>24. Tuples: Locked-Down Lists 🔒</h3><p>Lists that you can't change after you create them.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>25. Handling Oopsies (Try/Except) 🩹</h3><p>How to tell your program what to do if an error happens.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>26. Reading Text Files 📖</h3><p>Opening a saved file on the computer and reading the words inside it.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>27. Writing Text Files ✍️</h3><p>Saving new words or data into a file on the computer.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>28. Importing Superpowers (Modules) 🔋</h3><p>Using special tools and code other people made.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>29. Fun with the Random Module 🎲</h3><p>Using a tool to pick a random number or word.</p></a></li>
+            <li class="lesson-item"><a href="lesson.html"><h3>30. Your First Project: Calculator! 🚀</h3><p>Putting everything together to make a simple math tool.</p></a></li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+    
+</body>
+</html>

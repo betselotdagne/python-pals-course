@@ -1,0 +1,180 @@
+/* style.css */
+
+/* --- Custom Properties (Color Palette) --- */
+:root {
+    --color-primary: #FF6B6B; /* Bright Red/Coral - Action & Buttons */
+    --color-secondary: #4ECDC4; /* Teal - Secondary Elements & Highlights */
+    --color-accent: #FFE66D; /* Sunny Yellow - Emphasis & Fun */
+    --color-background: #F7FFF7; /* Light Mint/Off-White - Clean Background */
+    --color-text: #2C3E50; /* Dark Blue/Charcoal - Readable Text */
+    --font-family-header: 'Comfortaa', cursive; /* Fun, rounded header font */
+    --font-family-body: 'Varela Round', sans-serif; /* Clean, friendly body font */
+}
+
+/* --- Basic Reset and Fonts --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fallback fonts are included in case the Google Fonts fail to load */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap');
+
+body {
+    font-family: var(--font-family-body);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    padding-top: 80px; /* Space for fixed header */
+}
+
+/* --- Header/Navigation Bar --- */
+header {
+    background-color: var(--color-primary);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--font-family-header);
+    font-size: 1.8em;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.logo a:hover {
+    transform: scale(1.05);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* --- General Layout and Content --- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-family-header);
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; color: var(--color-secondary); }
+
+/* --- Buttons and Forms --- */
+.button, button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px var(--color-text); /* Fun 3D effect */
+}
+
+.button:hover, button:hover {
+    background-color: #FF8F8F;
+    transform: translateY(-2px);
+    box-shadow: 0 7px var(--color-text);
+}
+
+.button:active, button:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px var(--color-text);
+}
+
+.button.secondary {
+    background-color: var(--color-secondary);
+    box-shadow: 0 5px var(--color-text);
+}
+
+.button.secondary:hover {
+    background-color: #79F0E8;
+    box-shadow: 0 7px var(--color-text);
+}
+
+/* --- Code Styling (for display, not editor) --- */
+pre, code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95em;
+    background-color: #F0F4C3; /* Light Yellow/Green */
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+pre {
+    padding: 15px;
+    overflow-x: auto;
+    border: 2px solid var(--color-accent);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    color: white;
+    background-color: var(--color-primary);
+    font-size: 0.9em;
+}
+
+/* --- Media Queries (Responsiveness) --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        margin-top: 10px;
+    }
+    nav a {
+        margin: 5px 10px;
+        display: inline-block;
+    }
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text, .hero-image {
+        width: 100%;
+    }
+}

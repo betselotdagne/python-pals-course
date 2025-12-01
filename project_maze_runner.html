@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2: Maze Runner - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="project-header">
+            <a href="projects.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Projects</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                🗺️ Project 2: Console Maze Runner!
+            </h1>
+            <span style="display: inline-block; background-color: var(--color-secondary); color: white; padding: 5px 15px; border-radius: 15px; font-size: 1em; margin-top: 10px;">Difficulty: Medium</span>
+        </section>
+        
+        <hr style="margin: 20px 0;">
+
+        <section class="instructions">
+            <h2>The Challenge: Get from 'S' to 'E'!</h2>
+            <p>You will use a **List of Lists** (Nested Lists, Lesson 21) to store a map. The player will move using `w`, `a`, `s`, `d` commands until they reach the **End**.</p>
+
+            <h3>Key Concepts Used:</h3>
+            <ul>
+                <li>**Lists of Lists:** To create the 2D map.</li>
+                <li>**Variables:** To track the player's X and Y position.</li>
+                <li>**While Loop:** To keep the game running.</li>
+                <li>**If/Elif Logic:** To check the move, detect walls (`#`), and find the exit (`E`).</li>
+            </ul>
+
+            <pre><code>
+# Map Key:
+# '#' = Wall (You cannot move here)
+# '.' = Path (You can move here)
+# 'S' = Start Position
+# 'E' = Exit / Finish Line
+# '@' = Player
+            </code></pre>
+            
+            <h3>Step 1: Create the Map and Player Position</h3>
+            <p>The map is a list where each item is a row (another list).</p>
+            <pre><code>
+maze = [
+    list("########"),
+    list("#S..#..#"),
+    list("###.##.#"),
+    list("#....#.#"),
+    list("#.####.#"),
+    list("#E.....#"),
+    list("########")
+]
+
+# Player starts at S (Row 1, Column 1)
+player_row = 1
+player_col = 1
+            </code></pre>
+
+            <h3>Step 2: Display the Map (Drawing the Maze)</h3>
+            <p>We need a function to draw the maze every time the player moves.</p>
+            <pre><code>
+def draw_maze(m, r, c):
+    # Temporarily place the '@' symbol at the player's spot
+    m[r][c] = '@'
+    
+    # Print each row, joining the list of characters back into a string
+    for row in m:
+        print("".join(row))
+        
+    # Put the original character back so we can check walls correctly next turn
+    m[r][c] = '.' 
+    
+    print("----------------")
+            </code></pre>
+            
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>📝 Full Code for the Maze Runner</h2>
+            <p>This full code includes the main game loop and the winning condition!</p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 400px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# --- The Maze Runner Game ---
+# Use w, a, s, d to move!
+
+maze = [
+    list("########"),
+    list("#S..#..#"),
+    list("###.##.#"),
+    list("#....#.#"),
+    list("#.####.#"),
+    list("#E.....#"),
+    list("########")
+]
+
+player_row = 1
+player_col = 1
+game_running = True
+
+def draw_maze(m, r, c):
+    temp_char = m[r][c] # Store whatever is at the current spot
+    m[r][c] = '@'       # Draw player symbol
+    
+    for row in m:
+        # We must use str() for list items when printing
+        print("".join(str(i) for i in row))
+        
+    m[r][c] = temp_char # Restore the spot
+    print("----------------")
+
+
+print("Welcome to Maze Runner! Use W, A, S, D to move.")
+print("Reach the 'E' to win!")
+
+while game_running:
+    # 1. Show the current map
+    draw_maze(maze, player_row, player_col)
+    
+    # 2. Get user input
+    move = input("Your move (w/a/s/d): ").lower()
+    
+    # Calculate potential new position
+    new_row, new_col = player_row, player_col
+
+    if move == 'w': # Up
+        new_row -= 1
+    elif move == 's': # Down
+        new_row += 1
+    elif move == 'a': # Left
+        new_col -= 1
+    elif move == 'd': # Right
+        new_col += 1
+    else:
+        print("Invalid move. Use w, a, s, or d.")
+        continue
+
+    # 3. Check what is at the new spot
+    next_spot = maze[new_row][new_col]
+
+    if next_spot == '#':
+        print("BUMP! That's a wall. Try again.")
+    elif next_spot == 'E':
+        draw_maze(maze, new_row, new_col)
+        print("🏆 CONGRATULATIONS! You found the exit!")
+        game_running = False # Stop the loop
+    else:
+        # The move is valid, update player position
+        player_row, player_col = new_row, new_col
+        print("Path clear.")
+
+
+# --- END OF GAME ---
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 100px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to start the maze game! Type your moves (w, a, s, d) into this box when prompted.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>
