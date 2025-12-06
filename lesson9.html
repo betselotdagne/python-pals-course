@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9: Comparing Things - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 9: Comparing Things ⚖️
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>The Comparison Operators</h2>
+            <p>
+                In Lessons 7 and 8, we used rules inside the `if` and `elif` statements, like `score > 90`. These rules use **comparison operators** to ask Python a True/False question. The answer to this question is always a **Boolean** (`True` or `False`, which we learned in Lesson 6).
+            </p>
+            
+            <h3>All the ways to compare two things:</h3>
+            <ul>
+                <li>**Equal to:** `==` (Two equal signs, e.g., `age == 10`)</li>
+                <li>**Not Equal to:** `!=` (e.g., `name != "Bob"`)</li>
+                <li>**Greater Than:** `>` (e.g., `money > 50`)</li>
+                <li>**Less Than:** `<` (e.g., `health < 10`)</li>
+                <li>**Greater Than or Equal To:** `>=` (e.g., `points >= 100`)</li>
+                <li>**Less Than or Equal To:** `<=` (e.g., `temperature <= 32`)</li>
+            </ul>
+
+            <p style="padding: 10px; background-color: var(--color-accent); border-radius: 8px; font-weight: bold;">
+                ⚠️ **Important!** Do not confuse the **Comparison Operator** (`==`) with the **Assignment Operator** (`=`). A single equals sign (`=`) is only used to store a value in a variable.
+            </p>
+            
+            <h3>Example 1: Using Comparison Operators with Print</h3>
+            <pre><code>
+number_of_friends = 5
+
+# Is 5 equal to 5? (True)
+print(number_of_friends == 5)
+
+# Is 5 less than 3? (False)
+print(number_of_friends < 3)
+
+# Is 5 greater than or equal to 5? (True)
+print(number_of_friends >= 5)
+
+# Is "cat" not equal to "dog"? (True)
+print("cat" != "dog")
+            </code></pre>
+
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Use the `if/else` statement below with one of the new comparison operators to check a number!
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Check if a number is high enough for a video game!
+# You must be 13 or older to play the game.
+
+# Ask for the user's age
+age = int(input("What is your age? "))
+
+# 1. Use an IF statement and the >= operator to check the age.
+# IF age is greater than or equal to 13, print "Access Granted! Enjoy the game!"
+# ELSE, print "Access Denied. You must be 13 or older."
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

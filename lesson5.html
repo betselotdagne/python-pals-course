@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5: Getting Your Name - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 5: Getting Your Name (Input) 🙋
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>Talking Back to the Computer: The `input()` command</h2>
+            <p>
+                So far, your programs can only talk **to** you using `print()`. Now, it's time to let them listen! The **`input()`** command is how your program asks a question and **waits** for the user (your sons!) to type an answer and press Enter.
+            </p>
+            <p>
+                The question you want to ask goes inside the parentheses `()`.
+            </p>
+            
+            <h3>Saving the Answer</h3>
+            <p>
+                When the user types an answer, you need a **variable** (Lesson 4) to catch and store that information.
+            </p>
+            
+            <h3>Example 1: Asking for a Name</h3>
+            <pre><code>
+# 1. The program asks the question inside the input()
+# 2. The program waits for the answer
+# 3. The answer is saved into the variable 'name'
+name = input("What is your name? ") 
+
+# We can then print the name back!
+print("Hello, " + name + "! Welcome to Python.")
+            </code></pre>
+
+            <h3>Example 2: Combining Input and Output</h3>
+            <p>
+                You can ask for multiple pieces of information and use the answers in a fun sentence.
+            </p>
+            <pre><code>
+color = input("What is your favorite color? ")
+animal = input("What is your favorite animal? ")
+
+print("A " + color + " " + animal + " sounds amazing!")
+            </code></pre>
+
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Try the exercise below! Write your code in the box and click **Run Code!**
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Make the computer learn a new place!
+# 1. Create a variable called 'place' and ask: "Where do you live? "
+# 2. Print a sentence like: "Wow, [The place they typed] sounds like a fun place!"
+
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

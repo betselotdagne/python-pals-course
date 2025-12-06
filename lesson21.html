@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 21: Dictionaries: Address Books - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 21: Dictionaries: Address Books 📚
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>Keys and Values</h2>
+            <p>
+                In Lesson 12, we learned that a **List** stores data in order, and you find items using a number (the index, starting at 0).
+            </p>
+            <p>
+                A **Dictionary** is different. It stores data using **Key-Value Pairs**. Think of it like an **address book** or a **secret decoder ring**:
+            </p>
+            <ul>
+                <li>The **Key** is the word or name you look up (e.g., "Sam").</li>
+                <li>The **Value** is the information you get back (e.g., Sam's phone number).</li>
+            </ul>
+            
+            <h3>How to Create a Dictionary</h3>
+            <p>
+                You use **curly braces `{}`** to create a dictionary. Inside, you write the **key**, followed by a **colon `:`**, followed by the **value**.
+            </p>
+            
+            <h3>Example 1: An Animal's Data</h3>
+            <pre><code>
+animal = {
+    "species": "Dog", 
+    "name": "Buddy",
+    "age": 4, 
+    "is_friendly": True
+}
+print(animal)
+            </code></pre>
+
+            <h2>Accessing Data with Keys</h2>
+            <p>
+                To get a value out of the dictionary, you use the **key** inside square brackets `[]`, just like you would use an index for a list.
+            </p>
+            <pre><code>
+fav_colors = {
+    "Leo": "Blue",
+    "Mia": "Pink",
+    "Sam": "Green"
+}
+
+# The key is "Leo", the value is "Blue"
+leos_color = fav_colors["Leo"] 
+
+print("Leo's favorite color is:", leos_color)
+            </code></pre>
+            
+            <p style="padding: 10px; background-color: var(--color-accent); border-radius: 8px; font-weight: bold;">
+                ⚠️ Keys must be unique! You can't have two different "Sam" entries in the same dictionary.
+            </p>
+
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Create a dictionary of planets and their number of moons, then print the number of moons for one planet.
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Look up data in the planet dictionary!
+
+# Don't change this dictionary!
+planet_moons = {
+    "Earth": 1,
+    "Mars": 2,
+    "Jupiter": 95,
+    "Saturn": 146
+}
+
+# 1. Access the value for the key "Mars" and save it in a variable called 'mars_moons'.
+
+
+# 2. Print a message telling how many moons Mars has.
+
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

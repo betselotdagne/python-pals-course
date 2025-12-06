@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8: More Choices (Elif) - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 8: More Choices (Elif) 🪜
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>The Need for `elif`</h2>
+            <p>
+                In Lesson 7, we learned about `if` and `else`—a two-way choice (yes or no). But what if your program needs to choose between **many** different options?
+            </p>
+            <p>
+                This is where **`elif`** comes in. It stands for **"Else If"** and lets you check a second, third, or even tenth rule, but only if the previous rules were all **False**.
+            </p>
+            
+            <h3>How the computer checks `if/elif/else`:</h3>
+            <p>
+                The computer reads the rules from top to bottom. As soon as it finds the **first** rule that is **True**, it executes that block of code and then **skips the rest** of the `elif` and `else` checks.
+            </p>
+            
+            <h3>Example 1: Multiple Choices (A Grading System)</h3>
+            <pre><code>
+grade = 85
+
+if grade >= 90:
+    print("You got an A!")
+elif grade >= 80:
+    print("You got a B!")
+else:
+    print("You got a C or lower.")
+            </code></pre>
+            <p style="font-style: italic;">
+                (The computer checks: Is 85 >= 90? No. Is 85 >= 80? Yes! It prints "You got a B!" and stops checking.)
+            </p>
+
+            <h3>Example 2: Order Matters!</h3>
+            <p>
+                If we changed the order and put the smallest number first, it would behave differently. Always check the stricter, higher value conditions first!
+            </p>
+
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Try the exercise below! Write your code in the box and click **Run Code!**
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Use if, elif, and else to check a variable 'favorite_fruit'.
+# The user will type one of the three options: apple, banana, or orange.
+
+favorite_fruit = input("Type your favorite fruit: apple, banana, or orange: ")
+
+# 1. IF the fruit is "apple", print "An apple a day!"
+# 2. ELIF the fruit is "banana", print "Monkeys love that!"
+# 3. ELSE, print "That's a good fruit too."
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13: Finding Items in Lists - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 13: Finding Items in Lists 🔍
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>The Importance of Index (Position)</h2>
+            <p>
+                A list is an ordered collection, meaning every item has a specific place. This place is called the **index**. To find a specific item in the list, you need to know its index number.
+            </p>
+            
+            <p style="padding: 10px; background-color: var(--color-secondary); color: white; border-radius: 8px; font-weight: bold;">
+                🚨 Remember: Python always starts counting from **0**!
+                The first item is at index 0, the second is at index 1, and so on.
+            </p>
+            
+            <h3>Example 1: Accessing an Item</h3>
+            <p>
+                You access an item by writing the list variable name followed by the index number inside **square brackets `[]`**.
+            </p>
+            <pre><code>
+pals = ["Sam", "Leo", "Mia", "Zoe"]
+
+# "Sam" is at index 0
+print(pals[0]) 
+
+# "Mia" is at index 2
+print(pals[2]) 
+            </code></pre>
+
+            <h3>Example 2: Negative Indexing (Counting from the end)</h3>
+            <p>
+                You can also count backward using negative numbers:
+            </p>
+            <ul>
+                <li>`-1` is the **last** item.</li>
+                <li>`-2` is the second-to-last item.</li>
+            </ul>
+            <pre><code>
+colors = ["Red", "Blue", "Green", "Yellow"]
+
+# Prints "Yellow"
+print(colors[-1]) 
+
+# Prints "Green"
+print(colors[-2])
+            </code></pre>
+
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Use the list below to print out the first and last items!
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Print the first and last item of the list!
+
+# Don't change this list!
+fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
+
+
+# 1. Print the first item using index 0
+print("The first fruit is:", fruits[0])
+
+# 2. Print the last item using negative index -1
+
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

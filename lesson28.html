@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 28: Importing Superpowers (Modules) - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 28: Importing Superpowers (Modules) 🔋
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>The Python Toolbox</h2>
+            <p>
+                Imagine Python is a basic LEGO set. It has all the blocks you need (like `print`, variables, and loops). But what if you want to build a space station or a robot? You need specialized kits!
+            </p>
+            <p>
+                A **Module** is a file full of extra Python code (functions, variables, etc.) that someone else wrote. By using the **`import`** keyword, you can bring these specialized tools into your program.
+            </p>
+            
+            <h3>Example 1: The `math` Module</h3>
+            <p>
+                The standard Python toolkit is great, but it doesn't have a special tool for, say, finding the square root of a number. The `math` module does!
+            </p>
+            <pre><code>
+# Bring in the math toolbox
+import math
+
+# Use the 'sqrt' (square root) function from the math module
+# You must write 'math.' before the function name
+result = math.sqrt(25) 
+print(result) # Output: 5.0
+            </code></pre>
+
+            <h3>How to Use an Imported Tool:</h3>
+            <p>
+                When you use a tool from an imported module, you always use this format:
+                <br>
+                <code>**module_name**.**tool_name**()</code>
+            </p>
+
+            <h3>Example 2: The `sys` Module</h3>
+            <p>
+                The `sys` module gives you information about the computer system running your code. For instance, the value of `sys.version` is a string telling you which Python version you're using.
+            </p>
+            <pre><code>
+import sys
+
+# sys.version is a variable, not a function, so no () needed!
+print("I am running on Python version:")
+print(sys.version) 
+            </code></pre>
+            
+            <p style="padding: 10px; background-color: var(--color-accent); border-radius: 8px; font-weight: bold;">
+                Placing the `import` statements at the very top of your Python file is a good habit!
+            </p>
+            
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Import the built-in `math` module and use the `math.pi` variable to print the value of Pi.
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Import the math module and print Pi!
+
+# 1. Import the 'math' module here:
+
+
+# 2. Print the value of pi using: math.pi (No parentheses needed!)
+
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

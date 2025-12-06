@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: What Kind of Data? - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 6: What Kind of Data? 🤔
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>Data Types: The Four Main Kinds</h2>
+            <p>
+                In the last few lessons, you've used different kinds of data: numbers and words. Python is smart, but it needs to know what kind of data it's holding to use it correctly. There are four main types you need to know now:
+            </p>
+            
+            <ul>
+                <li>**Integer (`int`):** A whole number, like `10`, `50`, or `-3`. No decimal points.</li>
+                <li>**Float (`float`):** A number with a decimal point, like `3.14` or `9.99`.</li>
+                <li>**String (`str`):** Any sequence of characters, like words or sentences, always in quotes (`"Hello"`).</li>
+                <li>**Boolean (`bool`):** A true/false value. Can only be `True` or `False`. (We'll use these a lot in the next lesson!)</li>
+            </ul>
+            
+            <h3>Using the `type()` function</h3>
+            <p>
+                To check what type of data is stored in a variable, you use the special command **`type()`**.
+            </p>
+            
+            <h3>Example 1: Checking Types</h3>
+            <pre><code>
+my_age = 8         # This is an Integer
+my_money = 12.50   # This is a Float
+my_name = "Leo"    # This is a String
+game_over = False  # This is a Boolean
+
+# Use print() to see what type Python thinks it is!
+print(type(my_age))
+print(type(my_money))
+print(type(my_name))
+print(type(game_over))
+            </code></pre>
+
+            <h3>The Input Problem (A common mistake!)</h3>
+            <p>
+                **Remember:** When you use the `input()` command (from Lesson 5), Python **always** treats the answer as a **String**, even if the user types a number!
+            </p>
+            <pre><code>
+user_number = input("Type a number: ") # Let's say user types 7
+print(type(user_number))
+# Output will be: &lt;class 'str'>, NOT &lt;class 'int'>
+            </code></pre>
+
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Try the exercise below! Write your code in the box and click **Run Code!**
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Use the type() command to check the type of each variable!
+
+# Don't change these variables!
+first_initial = 'A'
+pi_number = 3.14159
+total_score = 95
+is_raining = True
+
+
+# Now, print the type of each of the four variables:
+print(type(first_initial))
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

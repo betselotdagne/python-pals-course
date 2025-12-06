@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 16: Looping a Number of Times (Range) - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 16: Looping a Number of Times (Range) 🔢
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>The Need for Numbered Loops</h2>
+            <p>
+                In the last lesson, we used a `for` loop to repeat code for every item in a list. But what if you just want to repeat code exactly **five times**, and you don't have a list?
+            </p>
+            <p>
+                The answer is the special function: **`range()`**.
+            </p>
+            
+            <h2>The `range()` Function</h2>
+            <p>
+                The `range()` function creates a sequence of numbers. You use it inside a `for` loop like this:
+            </p>
+            
+            <h3>1. Looping a Fixed Number of Times</h3>
+            <p>
+                If you put one number inside `range()`, Python starts counting from **0** and stops **before** it reaches your number.
+            </p>
+            <pre><code>
+# This loop runs 5 times (i = 0, 1, 2, 3, 4)
+for i in range(5):
+    print("Lift Off!")
+            </code></pre>
+
+            <h3>2. Looping with Start and Stop Numbers</h3>
+            <p>
+                You can tell Python exactly where to start and where to stop.
+                <code>range(**start**, **stop**)</code>
+            </p>
+            <pre><code>
+# This loop counts from 1 up to (but not including) 6.
+# i will be 1, 2, 3, 4, 5
+for number in range(1, 6):
+    print(number) 
+            </code></pre>
+            <p style="font-style: italic;">
+                The variable name (`i` or `number`) gets the value of the current count, which you can use inside the loop!
+            </p>
+            
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Use a `for` loop with `range()` to create a countdown from 3 down to 1, then print "GO!".
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Create a Countdown!
+
+# 1. Use a 'for' loop and range(start, stop) to count from 3 to 1.
+# HINT: If you want 3, 2, 1, you need to start at 3 and stop at 0.
+# The `range` function can also take a third step argument: range(start, stop, step)
+
+# Let's keep it simple: just print the numbers 1, 2, 3!
+for count in range(1, 4):
+    print(count)
+
+# Now, add one more print statement after the loop to print "GO!"
+# Remember to remove the indentation so it only runs once!
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

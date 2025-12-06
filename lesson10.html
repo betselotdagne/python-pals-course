@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 10: Both Must Be True (And) - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 10: Both Must Be True (And) ✅
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>Combining Rules with `and`</h2>
+            <p>
+                Sometimes, you need two or more things to be true before your program does something. The **`and`** keyword lets you check multiple conditions inside a single `if` statement.
+            </p>
+            
+            <p>
+                For an `if` statement using **`and`** to be true, **EVERY SINGLE condition** you connect must be true. If even one condition is false, the entire rule is false.
+            </p>
+            
+            <h3>Example 1: Getting a Treat</h3>
+            <p>
+                Imagine a rule: You get ice cream **IF** you finish your homework **AND** clean your room. Both must happen!
+            </p>
+            <pre><code>
+homework_done = True
+room_clean = False
+
+if homework_done == True and room_clean == True:
+    print("Time for ice cream!")
+else:
+    print("Finish your chores first.")
+            </code></pre>
+            <p style="font-style: italic;">
+                (In this case, `room_clean` is `False`, so the condition is **False**, and it prints "Finish your chores first.")
+            </p>
+
+            <h3>Example 2: Checking a Number Range</h3>
+            <p>
+                The `and` operator is perfect for seeing if a number falls **between** two values.
+            </p>
+            <pre><code>
+number = 15
+
+# Is the number greater than 10 AND less than 20? Yes!
+if number > 10 and number < 20:
+    print("The number is between 10 and 20.")
+            </code></pre>
+
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Use the `and` operator to create a "Secret Code" check. Both parts of the code must be correct!
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Unlock the code!
+
+# The correct secret code parts are "star" and "55"
+part_A = input("Enter the first code word (star): ")
+part_B = input("Enter the second code number (55): ")
+
+# 1. Use the 'and' operator to check IF part_A is "star" AND part_B is "55".
+# HINT: Remember that input() saves things as strings, so "55" must be in quotes!
+
+if part_A == "star" and part_B == "55":
+    print("ACCESS GRANTED! Welcome, Python Pal!")
+else:
+    print("ACCESS DENIED. Incorrect code.")
+
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

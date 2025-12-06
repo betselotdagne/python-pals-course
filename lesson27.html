@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 27: Writing Text Files - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 27: Writing Text Files ✍️
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>Saving Data with Files</h2>
+            <p>
+                The most exciting part of using files is saving new data! To do this, you change the **mode** when you open the file in the `open()` function.
+            </p>
+            
+            <h3>Two Ways to Write: Write (`w`) vs. Append (`a`)</h3>
+            <p>
+                When you open a file for writing, you must choose what you want to do with the content that's already there:
+            </p>
+            
+            <h4>1. Write Mode (`"w"`) - **CAUTION!**</h4>
+            <p>
+                The **`"w"`** mode (for **w**rite) will **DELETE everything** that was in the file and start a brand new, empty file. Use this when you want to replace the old content completely.
+            </p>
+            <pre><code>
+with open("my_note.txt", "w") as file:
+    # This line completely overwrites the file!
+    file.write("This is the NEW message.") 
+            </code></pre>
+
+            <h4>2. Append Mode (`"a"`) - **The Safer Choice**</h4>
+            <p>
+                The **`"a"`** mode (for **a**ppend) is usually safer. It leaves all the old content alone and puts your new content at the **very end** of the file.
+            </p>
+            <pre><code>
+with open("log.txt", "a") as file:
+    # This adds the message to the end of the file.
+    file.write("User logged in at 10:00 AM.\n") # \n adds a new line
+            </code></pre>
+
+            <h3>The `.write()` Method</h3>
+            <p>
+                Once the file is open for writing (using `"w"` or `"a"`), you use the **`.write()`** method to pass in the string (text) you want to save. You must give it a string!
+            </p>
+            
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                First, create a new file with one message (using `"w"`). Then, add a second line to the same file (using `"a"`).
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Write and Append to a File!
+
+file_name = "diary.txt"
+
+# 1. Use 'w' (write mode) to create the file and add the first line.
+with open(file_name, "w") as f:
+    f.write("Dear Diary, I learned to code today!\n")
+
+# 2. Use 'a' (append mode) to add a second line without deleting the first.
+with open(file_name, "a") as f:
+    f.write("I am using the append mode now.\n")
+
+# 3. Read the entire file back to see the results.
+with open(file_name, "r") as f:
+    final_content = f.read()
+    print("Content of " + file_name + ":")
+    print(final_content)
+
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

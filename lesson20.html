@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 20: Functions that Return Data - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 20: Functions that Return Data 📦
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>The `return` Keyword</h2>
+            <p>
+                In the last lesson, our function did the work (like adding numbers) and then printed the result. But what if you want to use that result later in your main program?
+            </p>
+            <p>
+                The **`return`** keyword is like an instruction to the function to **stop** and **give a value back** to where it was called from. This is how the `len()` function works—it returns the count, which you can then save in a variable.
+            </p>
+            
+            <h3>Example 1: Returning a Sum</h3>
+            <p>
+                Notice how we use the function call (`add_me(5, 10)`) on the right side of the equals sign, just like any other value!
+            </p>
+            <pre><code>
+# Define a function that RETURNS the sum
+def add_me(num1, num2):
+    total = num1 + num2
+    return total # Send the 'total' value back!
+
+# 1. Call the function and save the returned value in a variable
+first_answer = add_me(5, 10) 
+print(first_answer) # Output: 15
+
+# 2. Use the returned value in another calculation
+final_score = first_answer * 2
+print(final_score) # Output: 30
+            </code></pre>
+
+            <h3>Example 2: Returning a String</h3>
+            <p>
+                You can return any type of data: numbers, strings, Booleans, or even lists!
+            </p>
+            <pre><code>
+def get_message(name):
+    # Return a complete string
+    return "Nice to meet you, " + name + "!"
+
+my_message = get_message("Zoe")
+print(my_message) # Output: Nice to meet you, Zoe!
+            </code></pre>
+            
+            <p style="padding: 10px; background-color: var(--color-primary); color: white; border-radius: 8px; font-weight: bold;">
+                Anything written after a `return` statement in a function will NOT run, because the function stops instantly!
+            </p>
+            
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Write a function that calculates the area of a square (side * side) and uses `return` to send the answer back.
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Write an "Area" Function!
+
+# 1. Define a function called 'calculate_area' that takes one argument: 'side_length'.
+# 2. Inside the function, calculate the area (side_length * side_length).
+# 3. Use 'return' to send the area back to the program.
+
+def calculate_area(side_length):
+    area = side_length * side_length
+    return area
+
+# 4. Call the function and save the result in a new variable called 'room_area'
+room_area = calculate_area(8)
+
+# 5. Print the final result!
+print("The area of the room is:", room_area)
+
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

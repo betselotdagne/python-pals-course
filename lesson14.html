@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14: Changing Your List - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 14: Changing Your List 🛠️
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>Lists are Mutable (Changeable)</h2>
+            <p>
+                The great thing about Python Lists is that you can change them! This means you can update a misspelled item, add a new item to the end, or take an old item out.
+            </p>
+            
+            <h3>1. Changing an Item</h3>
+            <p>
+                If you know the **index** (position) of the item you want to change, you can treat that position like a variable (Lesson 4) and give it a new value.
+            </p>
+            <pre><code>
+fav_colors = ["Red", "Blue", "Green", "Pink"]
+print("Before:", fav_colors)
+
+# Change the item at index 3 ("Pink") to "Yellow"
+fav_colors[3] = "Yellow" 
+print("After:", fav_colors)
+            </code></pre>
+
+            <h3>2. Adding an Item (`.append()`)</h3>
+            <p>
+                The easiest way to add a new item is to stick it on the very end of the list using the **`.append()`** method.
+            </p>
+            <pre><code>
+shopping_list = ["Milk", "Eggs"]
+print("Before:", shopping_list)
+
+# Add "Bread" to the end
+shopping_list.append("Bread") 
+print("After:", shopping_list) 
+            </code></pre>
+
+            <h3>3. Removing an Item (`.pop()`)</h3>
+            <p>
+                You can remove an item by telling Python the **index** of the item to take out using the **`.pop()`** method. If you don't give it an index, it removes the last item.
+            </p>
+            <pre><code>
+months = ["Jan", "Feb", "Mar", "Apr"]
+print("Before:", months)
+
+# Remove the item at index 1 ("Feb")
+months.pop(1) 
+print("After:", months)
+            </code></pre>
+
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Practice modifying the list by changing one item, adding one item, and then removing one item.
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Make changes to the "To Do" list!
+
+to_do = ["Eat Lunch", "Do Homework", "Play Outside", "Go to Bed"]
+
+print("Original List:", to_do)
+
+# 1. Change "Eat Lunch" (index 0) to "Eat Breakfast"
+# to_do[0] = "..."
+
+# 2. Add a new item called "Read Book" to the end of the list.
+# to_do.append("...")
+
+# 3. Remove the last item in the list using .pop() without an index.
+# to_do.pop()
+
+
+print("Final List:", to_do)
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>

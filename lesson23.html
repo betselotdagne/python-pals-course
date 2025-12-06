@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 23: Looping Through Dictionaries - Python Pals</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.3/brython_stdlib.js"></script>
+    <script src="editor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body id="brython-setup" onload="brython()"> 
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">🐍 Python Pals</a></div>
+            <nav>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="lesson-header">
+            <a href="lessons.html" class="button secondary" style="margin-bottom: 20px;">← Back to All Lessons</a>
+            <h1 style="border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+                Lesson 23: Looping Through Dictionaries 🔄
+            </h1>
+        </section>
+        
+        <hr>
+
+        <section class="explanation">
+            <h2>Looking at Everything in the Address Book</h2>
+            <p>
+                In Lesson 15, you learned that you can use a **`for` loop** to go through every item in a **List**. You can do the same thing with a **Dictionary**!
+            </p>
+            <p>
+                A dictionary has two parts for every entry: the **Key** and the **Value**. Python gives you three ways to loop through a dictionary depending on which part you need.
+            </p>
+            
+            <pre><code>
+grades = {
+    "Math": 95, 
+    "Science": 88, 
+    "Art": 92
+}
+            </code></pre>
+
+            <h3>Method 1: Looping Through Keys (The Subject)</h3>
+            <p>
+                If you use a simple `for` loop on a dictionary, Python automatically loops through all the **Keys** (the subject names).
+            </p>
+            <pre><code>
+for subject in grades:
+    print("The subject is:", subject)
+    # You can get the value inside the loop!
+    print("The grade is:", grades[subject])
+            </code></pre>
+
+            <h3>Method 2: Looping Through Key AND Value (`.items()`)</h3>
+            <p>
+                The best way to loop through a dictionary is by using the **`.items()`** method. It gives you both the Key and the Value at the same time! You just need two variable names in your loop:
+            </p>
+            <p>
+                <code>for **key**, **value** in **dictionary**.items():</code>
+            </p>
+            <pre><code>
+for subject, grade in grades.items():
+    print(subject + " grade is " + str(grade))
+            </code></pre>
+            
+        </section>
+
+        <hr>
+
+        <section class="interactive-editor">
+            <h2>🧪 Your Turn: Interactive Code Editor</h2>
+            <p>
+                Use the **`.items()`** method to loop through all the pets and print a sentence for each one.
+            </p>
+
+            <div class="editor-container" style="border: 4px solid var(--color-primary); border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+                <textarea id="code-editor" style="width: 100%; height: 200px; padding: 15px; border: none; font-family: 'Fira Code', monospace; font-size: 1em; resize: vertical;" spellcheck="false">
+# Exercise: Say hello to all the pets!
+
+pet_names = {
+    "Dog": "Buddy",
+    "Cat": "Whiskers",
+    "Bird": "Tweety",
+    "Fish": "Finny"
+}
+
+# 1. Use a for loop with .items(). Use "species" and "name" for your two loop variables.
+# for species, name in pet_names.items():
+
+# 2. Inside the loop, print: "My [species] is named [name]." (e.g., "My Dog is named Buddy.")
+
+for species, name in pet_names.items():
+    print("My " + species + " is named " + name + ".")
+
+
+print("--- Your Code Output ---")
+                </textarea>
+                <button onclick="runCode()" class="button" style="width: 100%; border-radius: 0; padding: 15px;">▶️ Run Code!</button>
+            </div>
+            
+            <h3>Output:</h3>
+            <div id="code-output" style="min-height: 50px; background-color: #eee; padding: 15px; border: 2px solid #ccc; border-radius: 10px; white-space: pre-wrap;">
+                Click 'Run Code!' to see your results here.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Python Pals. Simple, free, and fun coding for kids.</p>
+    </footer>
+
+</body>
+</html>
